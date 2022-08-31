@@ -1,0 +1,38 @@
+body{
+    margin: 10px;
+    padding: 0;
+    background-color: black;
+}
+.Slider{
+    width: 700px;
+    height: 600px;
+    background: url(tribute.jpg);
+    background-repeat: no-repeat;
+    margin: 100px auto;
+    animation: slide 25s ;
+}
+@keyframes slide{
+25%
+{
+   width: 1200px;
+   height: 800px;
+    background: url(msd\ birthdaywishes.jpg );
+    background-repeat: no-repeat;
+}
+50%
+{
+    width: 700px;
+    height: 600px;
+    background: url(msd\ wk.jpg);
+}
+75%
+{
+    width: 1000px;
+    height:700px;
+    background: url(msd\ finisher.jpg);
+}
+100%
+{
+    background: url(msd.jpg);
+}
+}

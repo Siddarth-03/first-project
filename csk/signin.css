@@ -1,0 +1,164 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:sans-serif;
+
+}
+body{
+    min-height: 100vh;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    padding: 20px;
+}
+.container{
+    position:relative;
+    max-width: 1000px;
+    width: 100%;
+    background-color: white;
+    padding:100px 40px;
+    box-shadow: 5px 5px 10px rgb(236, 183, 36);
+    perspective: 2700px;
+    border-radius: 20px;
+}
+.container .cover{
+    position:absolute;
+    top:0;
+    left:50%;
+    height:100%;
+    width:50%;
+    z-index:98;
+    transition:all 1s ease;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    border-radius: 20px;
+
+    
+}
+.container .cover::before{
+    content:'';
+    position:absolute;
+    height: 100%;
+    width: 100%;
+    background: red;
+    opacity:0.6;
+
+}
+.container #flip:checked ~ .cover{
+    transform:rotateY(-180deg);
+}
+.container .cover img{
+    position:absolute;
+    height:100%;
+    width:100%;
+    object-fit: cover;
+    z-index: 10;
+    backface-visibility: hidden;
+    
+}
+.container .cover .back .df{
+    transform:rotateY(180deg);
+}
+
+.container form{
+    height:100%;
+    width:100%;
+    background: white;
+}
+.container .form-content{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    
+}
+.form-content .login-form,
+.form-content .signup-form
+{
+    width: calc(100% / 2 - 26px);
+
+}
+form .form-content .title{
+    position:relative;
+    font-size: 24px;
+    font-weight: 400;
+    color:black;
+}
+form .form-content .title:before{
+    content: '';
+    position:absolute;
+    height: 3px;
+    width: 20px;
+    left:0;
+    bottom:0;
+    background:orange;
+}
+form .form-content .input-boxes{
+    margin-top: 30px;
+}
+form .form-content .input-box{
+    display: flex;
+    align-items: center;
+    height:60px;
+    width:100%;
+    margin:10px 0;
+}
+.form-content .input-box input{
+    height:100% ;
+    width: 100%;
+    outline: none;
+    border: none;
+    padding-right: 2opx;
+    font-size: 16px;
+    font-weight: 400;
+    border-bottom: 3px solid rgb(247, 217, 162);
+    transition: all 1s ease;
+}
+.form-content .input-box input:focus,
+.form-content .input-box input:valid{
+    border-color: orange;
+}
+form .form-content .text{
+    font-size: 13px;
+    font-weight: 400;
+}
+form .form-content .text a{
+    text-decoration: none;
+}
+form .form-content .text a:hover{
+    text-decoration: underline;
+    color: rgb(17, 3, 51);
+}
+form .form-content .button{
+    color:black;
+    margin-top:30px;
+
+}
+form .form-content .button input{
+    color:black;
+    background: orange;
+    border-radius: 7px;
+    padding:0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+}
+form .form-content .button input:hover{
+    background:rgb(226, 133, 20)
+
+}
+
+form .form-content label{
+    color:blue;
+    cursor: pointer;
+}
+form .form-content label:hover{
+    text-decoration: underline;
+    
+}
+form .form-content .login-text,
+form .form-content .signup-text{
+    text-align: center;
+    margin-top: 25px;
+}
